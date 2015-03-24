@@ -1,9 +1,11 @@
-package com.citi.piggybank;
+package com.citi.piggybank.ui.activities;
 
 import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
+
+import com.citi.piggybank.R;
 
 
 public class MainActivity extends ActionBarActivity {
