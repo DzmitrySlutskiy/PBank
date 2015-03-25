@@ -32,7 +32,9 @@
         android:hint="USER ID/E-MAIL"
         android:textColorHint="#FFCBCBCB"
         android:background="@drawable/bg_white_rounded"
-        android:singleLine="true" />
+        android:singleLine="true"
+        android:inputType="textEmailAddress|phone"
+        android:gravity="center"/>
 
     <EditText
         android:layout_marginTop="30dp"
@@ -45,7 +47,9 @@
         android:hint="PASSWORD"
         android:textColorHint="#FFCBCBCB"
         android:background="@drawable/bg_white_rounded"
-        android:singleLine="true" />
+        android:singleLine="true"
+        android:inputType="textPassword"
+        android:gravity="center"/>
 
     <TextView
         android:id="@+id/aux_forgot_pass"
