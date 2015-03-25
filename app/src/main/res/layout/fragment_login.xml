@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/bg_gradient_splash">
+
+    <ImageView
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="30dp"
+        android:layout_alignParentBottom="true"
+        android:src="@drawable/citi_logo_login"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+
+    <ImageView
+        android:id="@+id/aux_logo"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="40dp"
+        android:src="@drawable/piggy_logo_login"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+
+    <EditText
+        android:id="@+id/login"
+        android:layout_marginTop="20dp"
+        android:layout_below="@id/aux_logo"
+        android:paddingLeft="10dp"
+        android:layout_marginLeft="25dp"
+        android:layout_width="312dp"
+        android:layout_height="45dp"
+        android:hint="USER ID/E-MAIL"
+        android:textColorHint="#FFCBCBCB"
+        android:background="@drawable/bg_white_rounded"
+        android:singleLine="true" />
+
+    <EditText
+        android:layout_marginTop="30dp"
+        android:id="@+id/password"
+        android:layout_below="@id/login"
+        android:paddingLeft="10dp"
+        android:layout_marginLeft="25dp"
+        android:layout_width="312dp"
+        android:layout_height="45dp"
+        android:hint="PASSWORD"
+        android:textColorHint="#FFCBCBCB"
+        android:background="@drawable/bg_white_rounded"
+        android:singleLine="true" />
+
+    <TextView
+        android:id="@+id/aux_forgot_pass"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="20dp"
+        android:layout_below="@id/password"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        style="@style/TextView.ForgotPassword"
+        android:text="@string/forgot_password" />
+
+    <TextView
+        android:layout_marginTop="10dp"
+        android:layout_below="@id/aux_forgot_pass"
+        android:id="@+id/sign_in"
+        android:background="@drawable/btn_sign_in"
+        android:layout_marginLeft="25dp"
+        android:layout_width="312dp"
+        android:layout_height="45dp"
+        android:gravity="center"
+        android:clickable="true" />
+
+    <TextView
+        android:layout_below="@id/sign_in"
+        android:id="@+id/term1"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="20dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        style="@style/TextView.Term"
+        android:text="@string/term_of_use" />
+
+    <TextView
+        android:layout_below="@id/term1"
+        android:id="@+id/term2"
+        android:layout_centerHorizontal="true"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        style="@style/TextView.Term"
+        android:text="@string/term_of_use2" />
+</RelativeLayout>

@@ -3,4 +3,11 @@
 
     <string name="hello_world">Hello world!</string>
     <string name="action_settings">Settings</string>
+    <string name="term_of_use">By signing in you agree to our</string>
+    <string name="term_of_use2"><u>Privacy Policy</u> and <u>Term of Service</u></string>
+    <string name="forgot_password"><u>Forgot password?</u></string>
+    <string name="creare_piggy_bank1">SELECT ONE OF THE</string>
+    <string name="creare_piggy_bank2">ELECTRONIC COMMERCE</string>
+    <string name="creare_piggy_bank3">COMPANY</string>
+
 </resources>

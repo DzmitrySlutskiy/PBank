@@ -16,9 +16,9 @@ import java.util.concurrent.TimeUnit;
  * Time: 13:35
  * Created by Dzmitry Slutskiy.
  */
-public class StartActivity extends ActionBarActivity {
+public class StartActivity extends BaseActivity {
 
-    public static final int SPLASH_TIME_OUT = 3;
+    public static final int SPLASH_TIME_OUT = 1;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

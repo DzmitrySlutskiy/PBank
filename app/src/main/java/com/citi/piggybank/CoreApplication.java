@@ -2,6 +2,8 @@ package com.citi.piggybank;
 
 import android.app.Application;
 
+import uk.co.chrisjenx.calligraphy.CalligraphyConfig;
+
 /**
  * CoreApplication
  * Version information
@@ -11,14 +13,11 @@ import android.app.Application;
  */
 public class CoreApplication extends Application {
 
-    /*  private fields  */
 
-    /*  public constructors */
+    @Override
+    public void onCreate() {
+        super.onCreate();
 
-    public CoreApplication() {/*   code    */}
-
-    /*  public methods  */
-
-    /*  private methods */
-
+        CalligraphyConfig.initDefault("fonts/Arial Rounded MT Bold Regular.ttf");
+    }
 }

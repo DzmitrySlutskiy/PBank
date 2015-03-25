@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/bg_gradient_splash">
+
+    <TextView
+        android:layout_marginTop="30dp"
+        android:layout_centerHorizontal="true"
+        android:id="@+id/aux_text1"
+        android:text="@string/creare_piggy_bank1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        style="@style/TextView.Create" />
+
+    <TextView
+        android:layout_below="@id/aux_text1"
+        android:layout_centerHorizontal="true"
+        android:id="@+id/aux_text2"
+        android:text="@string/creare_piggy_bank2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        style="@style/TextView.Create" />
+
+    <TextView
+        android:layout_below="@id/aux_text2"
+        android:layout_centerHorizontal="true"
+        android:id="@+id/aux_text3"
+        android:text="@string/creare_piggy_bank3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        style="@style/TextView.Create" />
+
+    <RelativeLayout
+        android:id="@+id/amazon_button"
+        android:layout_margin="20dp"
+        android:layout_below="@id/aux_text3"
+        android:background="@drawable/btn_white"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:clickable="true">
+
+        <ImageView
+            android:layout_marginTop="30dp"
+            android:layout_marginBottom="30dp"
+            android:layout_centerInParent="true"
+            android:src="@drawable/amazon"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/ebay_button"
+        android:layout_margin="20dp"
+        android:layout_below="@id/amazon_button"
+        android:background="@drawable/btn_white"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:clickable="true">
+
+        <ImageView
+            android:layout_marginTop="30dp"
+            android:layout_marginBottom="30dp"
+            android:layout_centerInParent="true"
+            android:src="@drawable/ebay"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+    </RelativeLayout>
+
+    <View
+        android:layout_marginTop="10dp"
+        android:layout_below="@id/ebay_button"
+        android:id="@+id/sign_in"
+        android:background="@drawable/btn_next_step"
+        android:layout_marginLeft="25dp"
+        android:layout_width="312dp"
+        android:layout_height="45dp"
+        android:gravity="center"
+        android:clickable="true" />
+
+</RelativeLayout>

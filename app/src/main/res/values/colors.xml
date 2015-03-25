@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <color name="primary">#ff30C3EF</color>
+    <color name="primary_dark">#ff00B1E9</color>
+    <color name="accent">#ff004986</color>
+
+    <color name="white_pressed">#FFCCCCCC</color>
+
+    <color name="green">#FF75CE39</color>
+    <color name="green_pressed">#FF528E27</color>
+
+    <color name="forgot_pass">#FFCBCBCB</color>
+</resources>
