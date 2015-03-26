@@ -96,4 +96,13 @@
         <item name="android:textColor">@android:color/white</item>
         <item name="android:textStyle">bold</item>
     </style>
+
+    <style name="TextView.Amount">
+        <item name="android:fontFamily" tools:ignore="NewApi">fonts/Arial Rounded MT Bold
+            Regular.ttf"
+        </item>
+        <item name="android:textSize">@dimen/text_size_extra_large</item>
+        <item name="android:textColor">@android:color/black</item>
+        <item name="android:textStyle">bold</item>
+    </style>
 </resources>

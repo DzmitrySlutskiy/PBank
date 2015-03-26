@@ -3,7 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     tools:context=".MainActivity">
     <item
-        android:id="@+id/action_settings"
+        android:id="@+id/action_add_piggy_bank"
         android:title="Add piggy bank"
         android:orderInCategory="100"
         android:icon="@drawable/ico_add_piggy"

@@ -1,19 +1,18 @@
 package com.citi.piggybank.ui.activities;
 
+import android.content.ContentValues;
 import android.os.Bundle;
-import android.support.v4.app.Fragment;
-import android.support.v4.app.FragmentManager;
-import android.support.v4.app.FragmentTransaction;
 import android.support.v7.app.ActionBar;
-import android.support.v7.app.ActionBarActivity;
 import android.view.Menu;
 import android.view.MenuItem;
 
 import com.citi.piggybank.R;
+import com.citi.piggybank.provider.PiggyContract;
+import com.citi.piggybank.ui.fragments.FillUpFragment;
 import com.citi.piggybank.ui.fragments.LoginFragment;
 
 
-public class MainActivity extends BaseActivity {
+public class MainActivity extends BaseActivity implements FillUpFragment.OnFillUpListener {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -33,7 +32,7 @@ public class MainActivity extends BaseActivity {
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
-//        getMenuInflater().inflate(R.menu.menu_main, menu);
+        getMenuInflater().inflate(R.menu.menu_main, menu);
         return true;
     }
 
@@ -45,14 +44,19 @@ public class MainActivity extends BaseActivity {
         int id = item.getItemId();
 
         //noinspection SimplifiableIfStatement
-        if (id == R.id.action_settings) {
 
-            return true;
-        }
 
         return super.onOptionsItemSelected(item);
     }
 
 
+    @Override
+    public void onFillUp(int index, int amount) {
+        getSupportFragmentManager().popBackStack();
+        ContentValues values = new ContentValues();
+        values.put(PiggyContract.COLUMN_AMOUNT, amount);
 
+        getContentResolver().update(PiggyContract.CONTENT_URI, values,
+                PiggyContract.COLUMN_ID + " = ?", new String[]{Integer.toString(index)});
+    }
 }

@@ -1,14 +1,15 @@
 package com.citi.piggybank.ui.adapters;
 
+import android.database.Cursor;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentStatePagerAdapter;
 
+import com.citi.piggybank.provider.PiggyContract;
+import com.citi.piggybank.ui.fragments.PiggyBanksFragment;
 import com.citi.piggybank.ui.fragments.PiggyItemFragment;
-
-import java.util.ArrayList;
-import java.util.List;
+import com.citi.piggybank.utils.CursorUtils;
 
 /**
  * PiggyPagerAdapter
@@ -16,33 +17,36 @@ import java.util.List;
  * 26.03.2015
  * Created by Dzmitry_Slutski.
  */
-public class PiggyPagerAdapter extends FragmentStatePagerAdapter {
+public class PiggyPagerAdapter extends FragmentStatePagerAdapter implements PiggyBanksFragment.OnWithdrawListener {
 
+    private Cursor mCursor;
 
-    private List<Items> mItems = new ArrayList<>();
-    private static final int FRAGMENT_TAB_COUNT = 3;
-
-    public PiggyPagerAdapter(FragmentManager fragmentManager) {
+    public PiggyPagerAdapter(FragmentManager fragmentManager, Cursor cursor) {
         super(fragmentManager);
 
-        mItems.add(new Items(FRAGMENT_TAB_COUNT, mItems.size(), "150 000", "FERRARI GT F150", 12));
-        mItems.add(new Items(FRAGMENT_TAB_COUNT, mItems.size(), "1 000", "iPhone 6+", 95));
-        mItems.add(new Items(FRAGMENT_TAB_COUNT, mItems.size(), "17 000", "Apple Watch Gold Edition", 100));
+        mCursor = cursor;
+    }
+
+    public void swapCursor(Cursor cursor) {
+        mCursor = cursor;
+        notifyDataSetChanged();
     }
 
     @Override
     public int getCount() {
-        return FRAGMENT_TAB_COUNT;
+        return mCursor == null ? 0 : mCursor.getCount();
     }
 
     @Override
     public Fragment getItem(int i) {
         Bundle fragmentArgs = new Bundle();
 
-        Items items = mItems.get(i);
-        items.saveToArgs(fragmentArgs);
-
+        mCursor.moveToPosition(i);
+        fragmentArgs.putInt(PiggyItemFragment.ARG_ITEM_INDEX, i);
+        fragmentArgs.putInt(PiggyItemFragment.ARG_ITEM_COUNT, getCount());
+        fragmentArgs.putInt(PiggyItemFragment.ARG_ITEM_ID, CursorUtils.getInt(mCursor, PiggyContract.COLUMN_ID));
         Fragment fragment = new PiggyItemFragment();
+
         fragment.setArguments(fragmentArgs);
 
         return fragment;
@@ -62,28 +66,16 @@ public class PiggyPagerAdapter extends FragmentStatePagerAdapter {
         return "PIGGY BANK";
     }
 
+    @Override
+    public void onWithdrawClick(int index) {
 
-    private static class Items {
-        int count;
-        int index;
-        int percent;
-        String goal;
-        String name;
-
-        public Items(int count, int index, String goal, String name, int percent) {
-            this.count = count;
-            this.index = index;
-            this.goal = goal;
-            this.name = name;
-            this.percent = percent;
+        /*mTabCount--;
+        mItems.remove(index);
+        for (Items items : mItems) {
+            items.count = mTabCount;
         }
-
-        public void saveToArgs(Bundle args) {
-            args.putInt(PiggyItemFragment.ARG_ITEM_COUNT, count);
-            args.putInt(PiggyItemFragment.ARG_ITEM_INDEX, index + 1);
-            args.putString(PiggyItemFragment.ARG_ITEM_NAME, name);
-            args.putString(PiggyItemFragment.ARG_ITEM_GOAL, goal);
-            args.putInt(PiggyItemFragment.ARG_ITEM_PERCENT, percent);
-        }
+        notifyDataSetChanged();*/
     }
+
+
 }

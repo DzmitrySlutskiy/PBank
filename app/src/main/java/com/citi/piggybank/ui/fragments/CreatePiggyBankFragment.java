@@ -1,5 +1,6 @@
 package com.citi.piggybank.ui.fragments;
 
+import android.content.ContentValues;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.Menu;
@@ -8,6 +9,8 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import com.citi.piggybank.R;
+import com.citi.piggybank.bo.Items;
+import com.citi.piggybank.provider.PiggyContract;
 import com.citi.piggybank.ui.activities.BaseActivity;
 
 /**
@@ -17,6 +20,8 @@ import com.citi.piggybank.ui.activities.BaseActivity;
  * Created by Dzmitry_Slutski.
  */
 public class CreatePiggyBankFragment extends BaseFragment {
+
+    private static int ITEM_INDEX = 0;
     @Override
     protected boolean showActionBar() {
         return true;
@@ -33,6 +38,15 @@ public class CreatePiggyBankFragment extends BaseFragment {
         view.findViewById(R.id.sign_in).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                ContentValues values = new ContentValues();
+                Items items = ITEMS.get(ITEM_INDEX++);
+
+                values.put(PiggyContract.COLUMN_NAME,items.name);
+                values.put(PiggyContract.COLUMN_GOAL,items.goal);
+                values.put(PiggyContract.COLUMN_AMOUNT,items.amount);
+
+                getActivity().getContentResolver().insert(PiggyContract.CONTENT_URI,values);
+
                 BaseActivity activity = (BaseActivity) getActivity();
                 activity.replaceFragment(R.id.container, new AmazonItemFragment(), "", false);
             }
