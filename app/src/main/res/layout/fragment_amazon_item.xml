@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/piggy_item_">
+
+    <RelativeLayout
+        android:id="@+id/buy_button"
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:background="@drawable/btn_green_bg"
+        android:layout_margin="10dp"
+        android:layout_alignParentBottom="true"
+        android:clickable="true">
+
+        <TextView
+            android:layout_marginLeft="20dp"
+            android:layout_alignParentLeft="true"
+            android:gravity="center_vertical"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:text="PRICE: $120 000"
+            style="@style/TextView.Buy" />
+
+
+        <TextView
+            android:id="@+id/aux_buy"
+            android:layout_alignParentRight="true"
+            android:gravity="center_vertical"
+            android:layout_gravity="center_vertical"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_marginRight="20dp"
+            android:text="BUY"
+            style="@style/TextView.Buy" />
+
+        <View
+            android:layout_toLeftOf="@id/aux_buy"
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="10dp"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="25dp"
+            android:layout_width="2dp"
+            android:layout_height="match_parent"
+            android:background="@android:color/white" />
+    </RelativeLayout>
+
+</RelativeLayout>

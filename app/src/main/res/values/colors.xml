@@ -11,4 +11,7 @@
     <color name="green_pressed">#FF528E27</color>
 
     <color name="forgot_pass">#FFCBCBCB</color>
+    <color name="saving_money">#FFCFCFCF</color>
+
+    <color name="title">#FFEBEBEB</color>
 </resources>

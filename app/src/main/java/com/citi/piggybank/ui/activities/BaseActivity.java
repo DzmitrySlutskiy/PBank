@@ -16,10 +16,9 @@ import uk.co.chrisjenx.calligraphy.CalligraphyContextWrapper;
  */
 public class BaseActivity extends ActionBarActivity {
 
-
     @Override
     protected void attachBaseContext(Context newBase) {
-        super.attachBaseContext(new CalligraphyContextWrapper(newBase));
+        super.attachBaseContext(CalligraphyContextWrapper.wrap(newBase));
     }
 
     public void replaceFragment(int containerId, Fragment fragment, String tag, boolean addToBackStack) {

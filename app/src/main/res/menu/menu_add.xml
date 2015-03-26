@@ -1,0 +1,11 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context=".MainActivity">
+    <item
+        android:id="@+id/action_settings"
+        android:title="Add piggy bank"
+        android:orderInCategory="100"
+        android:icon="@drawable/ico_add_piggy"
+        app:showAsAction="always" />
+</menu>

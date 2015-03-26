@@ -18,6 +18,10 @@ public class CoreApplication extends Application {
     public void onCreate() {
         super.onCreate();
 
-        CalligraphyConfig.initDefault("fonts/Arial Rounded MT Bold Regular.ttf");
+        CalligraphyConfig.initDefault(new CalligraphyConfig.Builder()
+                        .setDefaultFontPath("fonts/Arial Rounded MT Bold Regular.ttf")
+                        .setFontAttrId(R.attr.fontPath)
+                        .build()
+        );
     }
 }

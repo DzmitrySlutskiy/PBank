@@ -41,4 +41,7 @@
     <!-- Divider's size -->
     <dimen name="divider">4dp</dimen>
     <dimen name="divider_small">2dp</dimen>
+
+
+    <dimen name="piggy_size">250dp</dimen>
 </resources>
