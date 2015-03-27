@@ -27,7 +27,7 @@
             android:layout_weight="2"
             android:layout_width="0dp"
             android:layout_height="match_parent"
-            android:background="@drawable/btn_confirm"
+            android:background="@drawable/btn_transparent"
             android:clickable="true">
 
             <ImageView
@@ -55,7 +55,7 @@
             android:layout_weight="2"
             android:layout_width="0dp"
             android:layout_height="match_parent"
-            android:background="@drawable/btn_clicker"
+            android:background="@drawable/btn_transparent"
             android:clickable="true">
 
             <ImageView
